@@ -4,19 +4,20 @@
   font-size: 0;
   margin: 0;
   padding: 0;
-  text-align: left;
+
+  --size-abs: 442px;
+  --size-cell: 40px;
 }
 
 main {
   margin: auto;
   margin-top: 50px;
-  margin-left: 10px;
-  width: 442px;
-  height: 442px;
+  width: var(--size-abs);
+  height: var(--size-abs);
   border: 1px solid gray;
+
   display: grid;
-  grid-template-columns: 40px 400px;
-  grid-template-rows: 40px 400px;
+  grid-template-columns: var(--size-cell) 1fr;
 }
 
 .empty {
@@ -25,35 +26,28 @@ main {
 
 .name-div {
   display: grid;
-  grid-template-columns: repeat(10, 40px);
+  grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
-.number-div {
-    /* grid-template-rows: repeat(11, 40px); */
-    /* width: 40px; */
-}
-
-.n-cell{
+.n-cell {
   display: grid;
+  height: var(--size-cell);
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  width: 40px;
-  height: 40px;
-  outline: 1px solid gray;
+  border: 1px solid gray;
 }
 
 .ship-and-sea-div {
-  width: 400px;
   display: grid;
-  grid-template-columns: repeat(10, 38px);
-  grid-template-rows: repeat(10, 38px);
-  border:  1px solid gray;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+  border: 1px solid gray;
   gap: 2px;
   background-color: gray;
 }
 
-.sea{
+.sea {
   background-color: white;
 }
 
