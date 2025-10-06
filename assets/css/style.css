@@ -38,17 +38,20 @@ main {
   border: 1px solid gray;
 }
 
-.ship-and-sea-div {
+.ship-div {
+  padding: 1px;
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   grid-template-rows: repeat(10, minmax(0, 1fr));
-  border: 1px solid gray;
   gap: 2px;
-  background-color: gray;
+  background:
+    repeating-linear-gradient(gray 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(to right, gray 0 1px, transparent 1px 40px);
 }
 
-.sea {
-  background-color: white;
+
+.ship{
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .ship-1 {
